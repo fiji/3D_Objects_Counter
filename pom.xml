@@ -24,6 +24,13 @@
 		</dependency>
 	</dependencies>
 
+	<scm>
+		<connection>scm:git:git://github.com/fiji/3D_Objects_Counter</connection>
+		<developerConnection>scm:git:git@github.com:fiji/3D_Objects_Counter</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/fiji/3D_Objects_Counter</url>
+	</scm>
+
 	<repositories>
 		<!-- NB: for project parent, in case of partial checkout -->
 		<repository>

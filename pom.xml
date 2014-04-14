@@ -24,6 +24,11 @@
 		</dependency>
 	</dependencies>
 
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.imagej.net/job/3D_Objects_Counter/</url>
+	</ciManagement>
+
 	<scm>
 		<connection>scm:git:git://github.com/fiji/3D_Objects_Counter</connection>
 		<developerConnection>scm:git:git@github.com:fiji/3D_Objects_Counter</developerConnection>

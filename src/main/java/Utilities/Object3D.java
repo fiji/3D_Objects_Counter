@@ -23,9 +23,10 @@
 
 package Utilities;
 
-import ij.measure.*;
+import ij.measure.Calibration;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Vector;
 
 /**
  *

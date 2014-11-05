@@ -22,17 +22,23 @@
  */
 
 
-import ij.*;
-import ij.ImagePlus.*;
-import ij.process.*;
-import ij.gui.*;
-import ij.util.*;
-import java.awt.*;
-import java.util.*;
-import java.awt.event.*;
-
-import Utilities.*;
+import Utilities.Counter3D;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.Prefs;
+import ij.WindowManager;
+import ij.gui.GenericDialog;
 import ij.plugin.PlugIn;
+import ij.process.ImageProcessor;
+import ij.util.Tools;
+
+import java.awt.Scrollbar;
+import java.awt.TextField;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.util.Vector;
 
 /**
  *

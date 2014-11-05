@@ -22,9 +22,10 @@
  */
 
 
-import ij.*;
-import ij.plugin.*;
-import ij.gui.*;
+import ij.Prefs;
+import ij.WindowManager;
+import ij.gui.GenericDialog;
+import ij.plugin.PlugIn;
 
 /**
  *

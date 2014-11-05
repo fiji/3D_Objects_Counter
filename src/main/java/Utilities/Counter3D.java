@@ -23,14 +23,18 @@
 
 package Utilities;
 
-import Utilities.Counter3D.*;
-import ij.*;
-import ij.gui.*;
-import ij.measure.*;
-import ij.process.*;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.Prefs;
+import ij.WindowManager;
+import ij.gui.NewImage;
+import ij.measure.Calibration;
+import ij.measure.ResultsTable;
+import ij.process.ImageProcessor;
 
-import java.awt.*;
-import java.util.*;
+import java.awt.Font;
+import java.util.Arrays;
+import java.util.Vector;
 
 /**
  *

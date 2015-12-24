@@ -18,6 +18,62 @@
 	<name>plugins/3D_Objects_Counter.jar</name>
 	<description></description>
 
+	<developers>
+		<developer>
+			<id>chalkie666</id>
+			<name>Daniel James White</name>
+			<email>dan@chalkie.org.uk</email>
+			<roles>
+				<role>lead</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>ctrueden</id>
+			<name>Curtis Rueden</name>
+			<email>ctrueden@wisc.edu</email>
+			<url>http://loci.wisc.edu/people/curtis-rueden</url>
+			<organization>UW-Madison LOCI</organization>
+			<organizationUrl>http://loci.wisc.edu/</organizationUrl>
+			<roles>
+				<role>maintainer</role>
+			</roles>
+			<timezone>-6</timezone>
+		</developer>
+		<developer>
+			<id>hinerm</id>
+			<name>Mark Hiner</name>
+			<email>hiner@wisc.edu</email>
+			<url>http://loci.wisc.edu/people/mark-hiner</url>
+			<organization>UW-Madison LOCI</organization>
+			<organizationUrl>http://loci.wisc.edu/</organizationUrl>
+			<roles>
+				<role>maintainer</role>
+			</roles>
+			<timezone>-6</timezone>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Fabrice Cordelieres</name>
+			<url>http://imagej.net/User:Cordelieres</url>
+			<roles><role>founder</role></roles>
+			<properties><id>fab2506</id></properties>
+		</contributor>
+		<contributor>
+			<name>Johannes Schindelin</name>
+			<url>http://imagej.net/User:Schindelin</url>
+			<properties><id>dscho</id></properties>
+		</contributor>
+		<contributor>
+			<name>Niko Ehrenfeuchter</name>
+			<url>http://imagej.net/User:Ehrenfeu</url>
+			<properties><id>ehrenfeu</id></properties>
+		</contributor>
+	</contributors>
+
 	<scm>
 		<connection>scm:git:git://github.com/fiji/3D_Objects_Counter</connection>
 		<developerConnection>scm:git:git@github.com:fiji/3D_Objects_Counter</developerConnection>

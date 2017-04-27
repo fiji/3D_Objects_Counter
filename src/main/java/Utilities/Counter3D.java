@@ -63,8 +63,8 @@ public class Counter3D {
      *
      * @param img specifies the image to convert into an Counter3D.
      * @param thr specifies the threshold value (should be an Integer).
-     * @param MIN specifies the MIN size threshold to be used (should be an Integer).
-     * @param MAX specifies the MAX size threshold to be used (should be an Integer).
+     * @param min specifies the MIN size threshold to be used (should be an Integer).
+     * @param max specifies the MAX size threshold to be used (should be an Integer).
      * @param exclude specifies if the objects on the edges should be excluded (should be a boolean).
      * @param redirect specifies if intensities measurements should be redirected to another image defined within the options window (should be a boolean).
      */
@@ -123,8 +123,8 @@ public class Counter3D {
      * @param height specifies the image height.
      * @param nbSlices specifies the image numbre of slices.
      * @param thr specifies the threshold value (should be an Integer).
-     * @param MIN specifies the MIN size threshold to be used (should be an Integer).
-     * @param MAX specifies the MAX size threshold to be used (should be an Integer).
+     * @param min specifies the MIN size threshold to be used (should be an Integer).
+     * @param max specifies the MAX size threshold to be used (should be an Integer).
      * @param exclude specifies if the objects on the edges should be excluded (should be a boolean).
      * @param redirect specifies if intensities measurements should be redirected to another image defined within the options window (should be a boolean).
      * @param cal specifies the image calibration to be used.
@@ -710,13 +710,15 @@ public class Counter3D {
         if (closeImg) imgRedir.close();
     }
     
-    /** Returns an ResultsTable containing statistics on objects:</P>
-     * Volume and Surface: number of pixel forming the structures and at its surface respectively.</P>
-     * StdDev, Median, IntDen, Min and Max: standard deviation, median, sum, minimum and maximum of all intensities for the current object.</P>
-     * X, Y and Z: coordinates of the current object's centroïd.</P>
-     * XM, YM and ZM: coordinates of the current object's centre of mass.</P>
-     * BX, BY and BZ: coordinates of the top-left corner of the current object's bounding box.</P>
-     * B-width, B-height and B-depth: current object's bounding box dimensions.</P>
+    /** Returns an ResultsTable containing statistics on objects:
+     * <ul>
+     * <li>Volume and Surface: number of pixel forming the structures and at its surface respectively.</li>
+     * <li>StdDev, Median, IntDen, Min and Max: standard deviation, median, sum, minimum and maximum of all intensities for the current object.</li>
+     * <li>X, Y and Z: coordinates of the current object's centroïd.</li>
+     * <li>XM, YM and ZM: coordinates of the current object's centre of mass.</li>
+     * <li>BX, BY and BZ: coordinates of the top-left corner of the current object's bounding box.</li>
+     * <li>B-width, B-height and B-depth: current object's bounding box dimensions.</li>
+     * </ul>
      * @param newRT should be false if the result window is to be named "Results", allowing use of "Analyze/Distribution" and "Analyze/Summarize". If true, the window will be named "Statistics for "+image title.
      */
     public void showStatistics(boolean newRT){
@@ -795,9 +797,11 @@ public class Counter3D {
         IJ.log(title+": "+nbObj+" objects detected (Size filter set to "+minSize+"-"+maxSize+" voxels, threshold set to: "+thr+").");
     }
     
-    /** Returns an ResultsTable containing coordinates of the surface pixels for all objects:</P>
-     * Object ID: current object number.</P>
-     * X, Y and Z: coordinates of the current object's surface pixel.</P>
+    /** Returns an ResultsTable containing coordinates of the surface pixels for all objects:
+     * <ul>
+     * <li>Object ID: current object number.</li>
+     * <li>X, Y and Z: coordinates of the current object's surface pixel.</li>
+     * </ul>
      */
     public void showSurfPix(){
         if (!getSurfCoord) populateSurfPixCoord();
@@ -814,9 +818,9 @@ public class Counter3D {
     }
     
     /** Returns the index where to find the informations corresponding to pixel (x, y, z).
-     * @param x coordinate of the pixel.
-     * @param y coordinate of the pixel.
-     * @param z coordinate of the pixel.
+     * @param m x coordinate of the pixel.
+     * @param n y coordinate of the pixel.
+     * @param o z coordinate of the pixel.
      * @return the index where to find the informations corresponding to pixel (x, y, z).
      */
     private int offset(int m,int n,int o){

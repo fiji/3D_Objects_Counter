@@ -69,6 +69,15 @@ public class Object3D {
     
     /**SD of the distance to the surface (distance calibrated measure)*/
     public float SD_dist2surf;
+	
+	/**Min distance to the surface (distance calibrated measure)*/
+    public float min_dist2surf;
+	
+	/**Max distance to the surface (distance calibrated measure)*/
+    public float max_dist2surf;
+	
+	/**Max/Min dist. to surf. (Aspect ratio)*/
+    public float aspect_dist2surf;
         
     /**Object3D's size (in pixels or voxels)*/
     public int size;
@@ -230,6 +239,9 @@ public class Object3D {
         if (surf_size!=1){
             for (int i=0; i<surf_size; i++) SD_dist2surf+=Math.pow(dist2surfArray[i]-mean_dist2surf, 2);
             median_dist2surf=median(dist2surfArray);
+			min_dist2surf=min(dist2surfArray);
+			max_dist2surf=max(dist2surfArray);
+			aspect_dist2surf=(float) max_dist2surf/min_dist2surf;
             SD_dist2surf=(float) Math.sqrt(SD_dist2surf/(surf_size-1));
         }
         
@@ -257,4 +269,36 @@ public class Object3D {
         
         return med;
     }
+	
+	/**Calculates the min value of a float array.
+     * @param array input float array.
+     * @return the min value of the input float array (float).
+     */
+    public float min(float[] array){
+        float min=0;
+        int index=0;
+                
+        Arrays.sort(array);
+        
+        min=array[0];
+        
+        return min;
+    }
+	
+	/**Calculates the max value of a float array.
+     * @param array input float array.
+     * @return the max value of the input float array (float).
+     */
+    public float max(float[] array){
+        float max=0;
+        int index=0;
+                
+        Arrays.sort(array);
+        
+        max=array[array.length-1];
+        
+        return max;
+    }
+
+	
 }

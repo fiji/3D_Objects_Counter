@@ -92,8 +92,8 @@
 		<url>https://github.com/fiji/3D_Objects_Counter/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Travis CI</system>
-		<url>https://travis-ci.org/fiji/3D_Objects_Counter</url>
+		<system>GitHub Actions</system>
+		<url>https://github.com/fiji/3D_Objects_Counter/actions</url>
 	</ciManagement>
 
 	<properties>
@@ -102,7 +102,7 @@
 		<license.projectName>Fiji distribution of ImageJ for the life sciences.</license.projectName>
 
 		<!-- NB: Deploy releases to the SciJava Maven repository. -->
-		<releaseProfiles>deploy-to-scijava</releaseProfiles>
+		<releaseProfiles>sign,deploy-to-scijava</releaseProfiles>
 	</properties>
 
 	<repositories>

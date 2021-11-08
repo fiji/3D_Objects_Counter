@@ -82,7 +82,7 @@
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:git://github.com/fiji/3D_Objects_Counter</connection>
+		<connection>scm:git:https://github.com/fiji/3D_Objects_Counter</connection>
 		<developerConnection>scm:git:git@github.com:fiji/3D_Objects_Counter</developerConnection>
 		<tag>HEAD</tag>
 		<url>https://github.com/fiji/3D_Objects_Counter</url>

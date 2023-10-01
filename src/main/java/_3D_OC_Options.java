@@ -34,7 +34,7 @@ import ij.plugin.PlugIn;
  */
 public class _3D_OC_Options implements PlugIn{
     public void run(String arg) {
-    String[] label=new String[16];
+    String[] label=new String[19];
     boolean[] state=new boolean[label.length];
     
     label[0]="Volume"; state[0]=Prefs.get("3D-OC-Options_volume.boolean", true);
@@ -51,8 +51,11 @@ public class _3D_OC_Options implements PlugIn{
     label[11]="Mean_distance_to_surface"; state[11]=Prefs.get("3D-OC-Options_meanDist2Surf.boolean", true);
     label[12]="Std_Dev_distance_to_surface"; state[12]=Prefs.get("3D-OC-Options_SDDist2Surf.boolean", true);
     label[13]="Median_distance_to_surface"; state[13]=Prefs.get("3D-OC-Options_medDist2Surf.boolean", true);
-    label[14]="Centre_of_mass"; state[14]=Prefs.get("3D-OC-Options_COM.boolean", true);
-    label[15]="Bounding_box"; state[15]=Prefs.get("3D-OC-Options_BB.boolean", true);
+	label[14]="Min_distance_to_surface"; state[14]=Prefs.get("3D-OC-Options_minDist2Surf.boolean", true);
+	label[15]="Max_distance_to_surface"; state[15]=Prefs.get("3D-OC-Options_maxDist2Surf.boolean", true);
+	label[16]="Aspect-ratio_of_distance_to_surface"; state[16]=Prefs.get("3D-OC-Options_aspectDist2Surf.boolean", true);
+    label[17]="Centre_of_mass"; state[17]=Prefs.get("3D-OC-Options_COM.boolean", true);
+    label[18]="Bounding_box"; state[18]=Prefs.get("3D-OC-Options_BB.boolean", true);
     
     boolean closeImg=Prefs.get("3D-OC-Options_closeImg.boolean", false);
     boolean showMaskedImg=Prefs.get("3D-OC-Options_showMaskedImg.boolean", true);
@@ -81,7 +84,7 @@ public class _3D_OC_Options implements PlugIn{
     
     GenericDialog gd=new GenericDialog("3D-OC Set Measurements");
     gd.addMessage("Parameters to calculate:");
-    gd.addCheckboxGroup(8, 2, label, state);
+    gd.addCheckboxGroup(10, 2, label, state);
     gd.addMessage("");
     gd.addMessage("Image parameters:");
     gd.addCheckbox("Close_original_images_while_processing_(saves_memory)", closeImg);
@@ -115,6 +118,9 @@ public class _3D_OC_Options implements PlugIn{
     Prefs.set("3D-OC-Options_meanDist2Surf.boolean", gd.getNextBoolean());
     Prefs.set("3D-OC-Options_SDDist2Surf.boolean", gd.getNextBoolean());
     Prefs.set("3D-OC-Options_medDist2Surf.boolean", gd.getNextBoolean());
+	Prefs.set("3D-OC-Options_minDist2Surf.boolean", gd.getNextBoolean());
+	Prefs.set("3D-OC-Options_maxDist2Surf.boolean", gd.getNextBoolean());
+	Prefs.set("3D-OC-Options_aspectDist2Surf.boolean", gd.getNextBoolean());
     Prefs.set("3D-OC-Options_COM.boolean", gd.getNextBoolean());
     Prefs.set("3D-OC-Options_BB.boolean", gd.getNextBoolean());
     Prefs.set("3D-OC-Options_closeImg.boolean", gd.getNextBoolean());

@@ -726,7 +726,7 @@ public class Counter3D {
         float calXYZ=(float) (cal.pixelWidth*cal.pixelHeight*cal.pixelDepth);
         String unit=cal.getUnit();
         
-        String[] header={"Volume ("+unit+"^3)", "Surface ("+unit+"^2)", "Nb of obj. voxels", "Nb of surf. voxels", "IntDen", "Mean", "StdDev", "Median", "Min", "Max", "X", "Y", "Z", "Mean dist. to surf. ("+unit+")", "SD dist. to surf. ("+unit+")", "Median dist. to surf. ("+unit+")", "XM", "YM", "ZM", "BX", "BY", "BZ", "B-width", "B-height", "B-depth"};
+        String[] header={"ID", "Volume ("+unit+"^3)", "Surface ("+unit+"^2)", "Nb of obj. voxels", "Nb of surf. voxels", "IntDen", "Mean", "StdDev", "Median", "Min", "Max", "X", "Y", "Z", "Mean dist. to surf. ("+unit+")", "SD dist. to surf. ("+unit+")", "Median dist. to surf. ("+unit+")", "Min dist. to surf. ("+unit+")", "Max dist. to surf. ("+unit+")", "Max/Min dist. to surf. (Aspect ratio)", "XM", "YM", "ZM", "BX", "BY", "BZ", "B-width", "B-height", "B-depth"};
         ResultsTable rt;
         
         if (newRT){
@@ -741,6 +741,7 @@ public class Counter3D {
             rt.incrementCounter();
             Object3D currObj=(Object3D) obj.get(i);
             
+			rt.setValue("ID", i, i+1);
             if (Prefs.get("3D-OC-Options_volume.boolean", true)) rt.setValue("Volume ("+unit+"^3)", i, currObj.size*calXYZ);
             if (Prefs.get("3D-OC-Options_surface.boolean", true)) rt.setValue("Surface ("+unit+"^2)", i, currObj.surf_cal);
             if (Prefs.get("3D-OC-Options_objVox.boolean", true)) rt.setValue("Nb of obj. voxels", i, currObj.size);
@@ -763,6 +764,9 @@ public class Counter3D {
             if (Prefs.get("3D-OC-Options_meanDist2Surf.boolean", true)) rt.setValue("Mean dist. to surf. ("+unit+")", i, currObj.mean_dist2surf);
             if (Prefs.get("3D-OC-Options_SDDist2Surf.boolean", true)) rt.setValue("SD dist. to surf. ("+unit+")", i, currObj.SD_dist2surf);
             if (Prefs.get("3D-OC-Options_medDist2Surf.boolean", true)) rt.setValue("Median dist. to surf. ("+unit+")", i, currObj.median_dist2surf);
+			if (Prefs.get("3D-OC-Options_minDist2Surf.boolean", true)) rt.setValue("Min dist. to surf. ("+unit+")", i, currObj.min_dist2surf);
+			if (Prefs.get("3D-OC-Options_maxDist2Surf.boolean", true)) rt.setValue("Max dist. to surf. ("+unit+")", i, currObj.max_dist2surf);
+			if (Prefs.get("3D-OC-Options_aspectDist2Surf.boolean", true)) rt.setValue("Max/Min dist. to surf. (Aspect ratio)", i, currObj.aspect_dist2surf);
             
             if (Prefs.get("3D-OC-Options_COM.boolean", true)){
                 float[] tmpArray=currObj.c_mass;

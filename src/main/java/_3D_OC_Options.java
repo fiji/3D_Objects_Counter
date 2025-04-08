@@ -85,7 +85,7 @@ public class _3D_OC_Options implements PlugIn{
     gd.addMessage("");
     gd.addMessage("Image parameters:");
     gd.addCheckbox("Close_original_images_while_processing_(saves_memory)", closeImg);
-    gd.addCheckbox("Show_masked_image_(redirection_requiered)", showMaskedImg);
+    gd.addCheckbox("Show_masked_image_(redirection_required)", showMaskedImg);
     gd.addMessage("");
     gd.addMessage("Maps' parameters:");
     gd.addNumericField("Dots_size", dotSize, 0);
